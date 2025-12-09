@@ -23,7 +23,7 @@ O processamento de aprovações e transições de status em sistemas de Contas a
 ### 2. Solução Implementada (Melhoria Arquitetural)
 A solução foi centralizar todo o fluxo de transição de status (forward, approve, refuse, processing) em uma única Stored Procedure (ApprovalFlow) e otimizar a consulta para aceitar múltiplos IDs em uma única chamada.
 
-``` sql
+```sql
 -- Lógica Nova: SP robusta, centralizada e otimizada para LOTE.
 
 CREATE DEFINER=`admin`@`%` PROCEDURE `FINANCIAL`.`ApprovalFlow`(P_IDENTIFIER TEXT, P_ACTION  VARCHAR(50))
